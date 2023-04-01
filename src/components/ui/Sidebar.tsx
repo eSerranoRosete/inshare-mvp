@@ -6,7 +6,7 @@ interface IFProps {
 }
 export const Sidebar = ({ children }: IFProps) => {
   return (
-    <div className="flex w-full max-w-xs flex-col border-r border-gray-200 p-4 ">
+    <div className="flex w-full max-w-xs flex-col border-r border-gray-200 p-4 dark:border-gray-800 ">
       <div className="flex h-14 items-end">
         <div className="flex items-center gap-3 px-6 text-2xl font-semibold">
           <CircleSlashed />

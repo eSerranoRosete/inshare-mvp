@@ -1,15 +1,9 @@
-import {
-  CircleSlashed,
-  Inbox,
-  Layout,
-  LayoutGrid,
-  LineChart,
-} from "lucide-react";
+import { Inbox, Layout, LayoutGrid, LineChart } from "lucide-react";
 
 export const navItems = [
   {
     name: "Dashboard",
-    href: "/",
+    href: "/dashboard",
     alias: "dashboard",
     icon: LayoutGrid,
   },

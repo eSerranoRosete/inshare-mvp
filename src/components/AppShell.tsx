@@ -1,5 +1,6 @@
+import { useRouter } from "next/router";
+
 import { navItems } from "@/config/AppConfig";
-import { useActiveNav } from "@/hooks/store/useActiveNav";
 
 import { Sidebar } from "./ui/Sidebar";
 import { SidebarItem } from "./ui/SidebarItem";
@@ -8,15 +9,14 @@ interface IFAppShellProps {
   children: React.ReactNode;
 }
 export const AppShell = (props: IFAppShellProps) => {
-  const activeNav = useActiveNav((state) => state.activeNav);
-  const setActiveNav = useActiveNav((state) => state.setActiveNav);
+  const { pathname } = useRouter();
+  const activeNav = pathname.split("/")[1];
 
   return (
     <div className="flex min-h-screen">
       <Sidebar>
         {navItems.map((item, i) => (
           <SidebarItem
-            onClick={() => setActiveNav(item.alias)}
             key={i}
             name={item.name}
             href={item.href}
@@ -44,7 +44,7 @@ export const AppHeader = (props: IFAppHeaderProps) => {
   return (
     <header className="flex h-14 items-end">
       <h1 className="grow text-3xl font-semibold">{props.heading}</h1>
-      <div className="h-10 w-10 rounded-full bg-gray-950"></div>
+      <div className="h-10 w-10 rounded-full bg-gray-950 dark:bg-gray-50"></div>
     </header>
   );
 };

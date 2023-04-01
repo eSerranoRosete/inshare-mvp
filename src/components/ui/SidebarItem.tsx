@@ -22,7 +22,9 @@ export const SidebarItem = ({
       href={href}
       className={classNames(
         "flex items-center gap-4 rounded-md px-6 py-2 text-left text-sm font-medium ",
-        active ? "bg-gray-950 text-gray-50 antialiased" : "hover:bg-gray-200"
+        active
+          ? "bg-lime-400 text-gray-950 antialiased"
+          : "hover:bg-gray-200 dark:hover:bg-gray-900"
       )}
     >
       <Icon className="w-5" />
